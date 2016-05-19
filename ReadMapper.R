@@ -35,7 +35,7 @@ if(is.na(args[1])==FALSE && args[1] == "-test"){
 }else if(is.na(args[1]) || file.exists(args[1])==FALSE || (is.na(args[2])==FALSE && file.exists(args[2])==FALSE) ){
 	stop("USAGE: %Rscript ReadMapper.R READ_MAPPINGS.BLASTN [ORF_MAPPINGS.BLASTN]
 	
-	You willl need to create the alignment coordinates between the reads and DNA backbone
+	You will need to create the alignment coordinates between the reads and nucleotide backbone
 	The easiest way to do this is to use blastn with the command below:
 		blastn -subject GENOME.FNA -query READS.FNA -outfmt '6 sstart send slen' -max_target_seqs 1 > READ_MAPPINGS.BLASTN
 		
