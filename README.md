@@ -1,5 +1,5 @@
 # ReadMapper
-ReadMapper is a program that maps sequencing reads to a nucleotide backbone, and then creates a publication quality figure.  It is an R script and has the dependancy `ggplot2`, which you can install with the command `install.packages('ggplot2')` within R.
+ReadMapper is a program that maps sequencing reads to a nucleotide backbone, and then creates a publication quality figure.  It is an R script and has the dependancy **ggplot2**, which you can install in R, using the command `install.packages('ggplot2')`.
 
 ## Quick start
 ```sh
