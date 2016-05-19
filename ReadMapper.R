@@ -108,6 +108,8 @@ if(args[1] == "-test"){
 	invisible(dev.off())
 	if(md5sum("temp.tiff") == md5sum("READ_MAPPINGS.TIFF")){
 		cat("Passed 1/1 tests.\n")
+	}else{
+		cat("Failed 1/1 tests.\n")
 	}
 	unlink("temp.tiff")
 }else{
