@@ -1,5 +1,5 @@
 # ReadMapper
-ReadMapper is a program that maps sequencing reads to a nucleotide backbone, and then creates a publication quality figure.  It is an R script and has the dependancy **ggplot2**, which you can install in R, using the command `install.packages('ggplot2')`.
+**ReadMapper** is a program that maps sequencing reads to a nucleotide backbone, and then creates a publication quality figure.  It is an R script and has the dependency **ggplot2**, which you can install in R, using the command `install.packages('ggplot2')`.
 
 ## Quick start
 ```sh
@@ -21,7 +21,7 @@ The easiest way to do this is to use BLASTN with the command below:
 ```
      blastn -subject GENOME.FNA -query READS.FNA -outfmt '6 sstart send slen' -max_target_seqs 1 > READ_MAPPINGS.BLASTN
 ```
-If your sequencing reads file is large, an alternative to BLASTN, would be optimized aligners, such as bowtie or bwa.
+If your sequencing reads file is large, an alternative to BLASTN, would be optimized aligners, such as **bowtie** or **bwa**.
 
 Converting your `GENOME.FNA` file to a BLASTN database will also speed up the read alignment step. This can be accomplished
 by using the command:
@@ -43,7 +43,7 @@ To create these mappings use the command below:
 <sup>†</sup>_ReadMapper currently requires the very first line to contain the backbone length in a third column_
 
 ## Output
-If ReadMapper ran correctly you should get an output image titled figure.tiff.  If you use the test data, the figure will
+If **ReadMapper** ran correctly you should get an output image titled figure.tiff.  If you use the test data, the figure will
 look like the image below:
 ![](https://github.com/deprekate/ReadMapper/blob/master/figure.png)
 
