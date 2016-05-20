@@ -92,13 +92,15 @@ if(file.exists(file_orfs) ){
 		pieces = unlist(strsplit(line,"\t"))
 		start = strtoi(pieces[1])
 		end = strtoi(pieces[2])
+		df <- data.frame(x1 = start, x2 = end, y1 = (start%%3)+1, y2 = (start%%3)+1, ORF="")
 		if(start < end){
-			p <- p + geom_segment(x=start, y=(start%%3)+1, xend=end, yend=(start%%3)+1)
+			p <- p + geom_segment(data=df, mapping=aes(x=x1, y=y1, xend=x2, yend=y2, color=ORF), inherit.aes=FALSE)
 		}else{
-			p <- p + geom_segment(x=start, y=-((start%%3)+1), xend=end, yend=-((start%%3)+1))
+			p <- p + geom_segment(data=df, mapping=aes(x=x1, y=-y1, xend=x2, yend=-y2, color=ORF), inherit.aes=FALSE)
 		}
 	}
 	close(con)
+	p <- p + scale_color_manual(values=c("black"))
 }
 
 #---------------PLOT THE DATA IN TIFF FORM-----------------#
