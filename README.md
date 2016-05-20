@@ -40,7 +40,8 @@ To create these mappings use the command below:
      blastn -subject GENOME.FNA -query ORFS.FNA -outfmt '6 sstart send slen' -max_target_seqs 1 > ORF_MAPPINGS.BLASTN
 ```
 
-    <sup>†</sup>_ReadMapper currently requires the very first line to contain the backbone length in a third column_
+<sup>†</sup>_ReadMapper currently requires the very first line to contain the backbone length in a third column_
+
 ## Output
 If ReadMapper ran correctly you should get an output image titled figure.tiff.  If you use the test data, the figure will
 look like the image below:
