@@ -31,7 +31,7 @@ file_reads = 'READ_MAPPINGS.BLASTN'
 file_orfs = 'ORF_MAPPINGS.BLASTN'
 
 if(is.na(args[1])==FALSE && args[1] == "-test"){
-	cat("Testing...")
+	cat("Testing...\n")
 }else if(is.na(args[1]) || file.exists(args[1])==FALSE || (is.na(args[2])==FALSE && file.exists(args[2])==FALSE) ){
 	stop("USAGE: %Rscript ReadMapper.R READ_MAPPINGS.BLASTN [ORF_MAPPINGS.BLASTN]
 	
@@ -108,12 +108,17 @@ if(args[1] == "-test"){
 	tiff(filename="temp.tiff", width=8, height=4, units="in", res=600)
 	print(p)
 	invisible(dev.off())
-	if(md5sum("temp.tiff") == md5sum("READ_MAPPINGS.TIFF")){
-		cat("Passed 1/1 tests.\n")
+	if(file.exists("temp.tiff")){
+		cat("Passed test 1: image created.\n")
 	}else{
-		cat("Failed 1/1 tests.\n")
+		cat("Failed test 1: image not created.\n")
 	}
-	unlink("temp.tiff")
+	if(md5sum("temp.tiff") == md5sum("READ_MAPPINGS.TIFF")){
+		cat("Passed test 2: image matches reference.\n")
+		unlink("temp.tiff")
+	}else{
+		cat("Failed test 2: image does not match reference. This could be caused by personalized R setttings. Check that the image file temp.tiff matches READ_MAPPINGS.TIFF\n")
+	}
 }else{
 	tiff(filename="figure.tiff", width=8, height=4, units="in", res=600)
 	print(p)
