@@ -62,10 +62,12 @@ while ( TRUE ) {
 		break
 	}
 	pieces = unlist(strsplit(line,"\t"))
-	for (i in pieces[1]:pieces[2]){
-		if(pieces[1] < pieces[2]){
+	if(as.numeric(pieces[1]) <= as.numeric(pieces[2])){
+		for (i in pieces[1]:pieces[2]){
 			forward[i] <- forward[i]+1
-		}else{
+		}
+	}else{
+		for (i in pieces[1]:pieces[2]){
 			reverse[i] <- reverse[i]+1
 		}
 	} 
@@ -125,6 +127,4 @@ if(args[1] == "-test"){
 	invisible(dev.off())
 	cat("Output image: figure.tiff\n")
 }
-
-              
-              
+ 
