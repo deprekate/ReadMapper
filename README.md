@@ -15,7 +15,7 @@ Rscript ReadMapper.R -test
 
 ## Prepare input data    
 You will need to create alignment coordinates between the reads and nucleotide backbone.
-The input files that the form of two<sup>†</sup> tab seperate columns: the start and end of the read alignment.
+The input file needs to be in the form of two<sup>†</sup> tab seperate columns: the start and end of the read alignment.
 
 The easiest way to do this is to use BLASTN with the command below:
 ```
